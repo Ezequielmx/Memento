@@ -4,7 +4,8 @@ var AndroidContacts = {
     @param {string} name - The contact name.
     @param {Arguments} options - Extra options
     You can specify extra contact options:
-      {string} phone - The contact phone number.
+      {string} phone - The contact primary phone number.
+      {string} sec_phone - The contact secundary phone number.
       {string} email - The contact email address.
       {string} postal - The contact postal address.
       {string} company - The contact company.
@@ -22,6 +23,8 @@ var AndroidContacts = {
         if (options !== undefined) {          
             if (options.phone !== undefined) 
               i.extra("phone" , options.phone);
+            if (options.sec_phone !== undefined) 
+              i.extra("secondary_phone" , options.sec_phone);
             if (options.email !== undefined)
               i.extra("email" , options.email);
             if (options.postal !== undefined)
